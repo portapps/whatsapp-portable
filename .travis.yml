@@ -1,0 +1,41 @@
+os: windows
+language: shell
+
+env:
+  global:
+    - GOVERSION: 1.11.5
+    - NODEJS_VERSION: 11.9.0
+
+before_install:
+  - git clone https://github.com/portapps/portapps ${TRAVIS_BUILD_DIR}/../portapps
+  - source ${TRAVIS_BUILD_DIR}/../portapps/.travis/prepare.sh
+  - bash ${TRAVIS_BUILD_DIR}/../portapps/.travis/java.sh
+  - bash ${TRAVIS_BUILD_DIR}/../portapps/.travis/ant.sh
+  - bash ${TRAVIS_BUILD_DIR}/../portapps/.travis/nodejs.sh
+  - bash ${TRAVIS_BUILD_DIR}/../portapps/.travis/go.sh
+  - set
+
+script:
+  - ant release
+
+after_success:
+  - export APP_VERSION=$(cat $TRAVIS_BUILD_DIR/bin/tmp/version.dat)
+  - echo ${APP_VERSION}
+
+before_deploy:
+  - git config --local user.email "builds@travis-ci.com"
+  - git config --local user.name "Travis CI"
+  - export TRAVIS_TAG="${APP_VERSION}"
+  - git tag $TRAVIS_TAG
+  - ls -al bin/release
+
+deploy:
+  provider: releases
+  api_key:
+    secure: csk2lkgi9ESpN7oamr5dFFfwoMkqPcNScq5BzFW5h5GB5eCR4pe1KII/UCFBDnZDPSI7RX1t3YGk2XJe0o25E2vEuxh5tjrkTjf3vgRvYnsczFzjr9exEjHQfHksRaxfpoQeUIVHrh+Dt6SiK4jSqbYTX2+E3QKogCsFzsr96NMgGmZIFF1M2LtML6UIDXlfqxOsltKUai5o9KCDE5BFxt7Aa5fXT1UV9kKxLY5cIHIjWxwizDyvjRW1CV2ZEux5HiNkNEbVjBM7+hx1qJMdwwyADcVg1NoHxU1oMnIP9TNIsKE8YDZusqK3VcBb5hVHALKyZDa8QRl3Mn3qsKlGym0+JgF1GUEomjjH8gU8fuZzltNULT/iNwHTN4S1X0x2JTdKBvWc66VSPLCPxur1YG33I9cMUWbNozANz0xbLAHsLa2rlvWHSeGeLHKfDFvnRgI9wm/3WOBU4X5DHlYLB13yCFMR31jUEuegiawtVrVY+ei/zdUg8395JPqH/VCdLKaALZbSW94obH/UA3deDtH4kaawLPNL7rAngCntDtnU/wjLoIMo0zzYNqmgemuVwtM8nLoD4yCQffQBmz1Q6cm0lp8DbKhPp0v8v2XvgMzV3I1vffQ9e8npxJKDeaHfXxZP6mpuCFeJODERHMMvxlZZSBklOqJBufq3YYMm+VI=
+  file_glob: true
+  file: bin/release/*
+  skip_cleanup: true
+  draft: true
+  on:
+    tags: false
