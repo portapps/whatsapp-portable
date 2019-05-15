@@ -12,13 +12,15 @@
 
 ## Notice of Non-Affiliation and Disclaimer
 
-Portapps is not affiliated, associated, authorized, endorsed by, or in any way officially connected with WhatsApp, or any of its subsidiaries or its affiliates. The official WhatsApp website can be found at https://www.whatsapp.com.
+Portapps is not affiliated, associated, authorized, endorsed by, or in any way officially connected with WhatsApp™, or any of its subsidiaries or its affiliates.
 
-The name WhatsApp® as well as related names, marks, emblems and images are registered trademarks of their respective owners.
+The official WhatsApp™ website can be found at https://www.whatsapp.com.
+
+The name WhatsApp™ as well as related names, marks, emblems and images are registered trademarks of their respective owners.
 
 ## About
 
-WhatsApp portable app made with 🚀 [Portapps](https://portapps.io).<br />
+WhatsApp™ portable app made with 🚀 [Portapps](https://portapps.io).<br />
 Documentation and downloads can be found on https://portapps.io/app/whatsapp-portable/
 
 ## How can I help ?
