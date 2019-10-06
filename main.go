@@ -9,7 +9,6 @@ import (
 	"os"
 	"path"
 
-	_ "github.com/kevinburke/go-bindata"
 	. "github.com/portapps/portapps"
 	"github.com/portapps/portapps/pkg/shortcut"
 	"github.com/portapps/portapps/pkg/utl"
