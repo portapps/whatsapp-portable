@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.9309-15 (2019/12/13)
+
+* WhatsApp 0.3.9309
+* Add `cleanup` config
+* Portapps 1.31.0
+
 ## 0.3.9308-14 (2019/11/28)
 
 * WhatsApp 0.3.9308
