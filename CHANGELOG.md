@@ -4,6 +4,7 @@
 
 * WhatsApp 2.2114.9
 * Portapps 3.3.0
+* No more win32 release
 
 ## 2.2104.10-28 (2021/02/25)
 
