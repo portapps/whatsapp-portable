@@ -16,4 +16,9 @@
   <!-- Targets -->
   <target name="release" depends="release.app" description="Release"/>
 
+  <target name="prepare" depends="load.lib.asar">
+    <echo message="Preparing release..."/>
+    <delete file="${build.path}\${papp.folder}\app-${app.version}\squirrel.exe"/>
+  </target>
+
 </project>
