@@ -28,17 +28,13 @@
     </exec>
 
     <echo message="Replacing in app.asar..."/>
-    <assertfile file="${build.path}\${papp.folder}\app-${app.version}\resources\app\${electron.appasar.file}"/>
-    <replace file="${build.path}\${papp.folder}\app-${app.version}\resources\app\${electron.appasar.file}" failOnNoReplacements="true">
-      <replacefilter token="${electron.appasar.search}" value="${electron.appasar.replace}"/>
+    <assertfile file="${build.path}\${papp.folder}\app-${app.version}\resources\app\${electron.appasar.file0}"/>
+    <replace file="${build.path}\${papp.folder}\app-${app.version}\resources\app\${electron.appasar.file0}" failOnNoReplacements="true">
+      <replacefilter token="${electron.appasar.search0}" value="${electron.appasar.replace0}"/>
     </replace>
     <assertfile file="${build.path}\${papp.folder}\app-${app.version}\resources\app\${electron.appasar.file1}"/>
     <replace file="${build.path}\${papp.folder}\app-${app.version}\resources\app\${electron.appasar.file1}" failOnNoReplacements="true">
       <replacefilter token="${electron.appasar.search1}" value="${electron.appasar.replace1}"/>
-    </replace>
-    <assertfile file="${build.path}\${papp.folder}\app-${app.version}\resources\app\${electron.appasar.file2}"/>
-    <replace file="${build.path}\${papp.folder}\app-${app.version}\resources\app\${electron.appasar.file2}" failOnNoReplacements="true">
-      <replacefilter token="${electron.appasar.search2}" value="${electron.appasar.replace2}"/>
     </replace>
 
     <echo message="Removing app.asar..."/>
